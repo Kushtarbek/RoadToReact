@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import List from "./components/List";
 
 // let str = 'text' //string
 // let str1;        //undefined
@@ -9,30 +10,10 @@ import "./App.css";
 // let bigint = "12312312"
 // let arr = [12,45,67,89];
 
-const list = [
-  {
-    title: "React",
-    url: "https://reactjs.org/",
-    author: "Jordan Walke",
-    num_comments: 3,
-    points: 4,
-    objectID: 0,
-  },
-  {
-    title: "Redux",
-    url: "https://redux.js.org/",
-    author: "Dan Abramov",
-    num_comments: 2,
-    points: 5,
-    objectID: 1,
-  },
+const users = [
+  // { id: 1, firstName: "kushu", lastName: "the developer" },
+  { id: null, firstName: null, lastName: null },
 ];
-
-// var nums = [1, 3, 6, 7, 11];
-
-// const newNums = numbers.map(function (number) {
-//   return number * 2;
-// });
 
 function App() {
   return (
@@ -43,11 +24,33 @@ function App() {
       <input id="search" type="text" />
 
       <hr />
-      {list.map(function (item) {
-        return <div>{item.title}</div>;
-      })}
+      <List />
     </div>
   );
 }
+
+// function List({ list }) {
+//   if (!list) {
+//     return null;
+//   }
+
+//   return (
+//     <div>
+//       {!list.length ? (
+//         <p>Sorry, the list is empty.</p>
+//       ) : (
+//         list.map((item) => <Item item={item} />)
+//       )}
+//     </div>
+//   );
+// }
+
+// function Item({ item }) {
+//   return (
+//     <li>
+//       {item.firstName} {item.lastName}
+//     </li>
+//   );
+// }
 
 export default App;
